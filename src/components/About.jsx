@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function About() {
   return (
@@ -26,9 +27,9 @@ export default function About() {
             evidence-based services.
           </p>
           <div className="mt-4">
-            <a href="/programs" className="text-indigo-600 underline">
+            <Link to="/programs" className="text-indigo-600 underline">
               Explore Programs →
-            </a>
+            </Link>
           </div>
         </div>
       </div>
