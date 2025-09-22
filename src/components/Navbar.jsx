@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Logo from "../assets/logo/logo.jpg"; // your logo file
+import Logo from "../assets/Logo/logo.jpg"; // your logo file
 
 const Nav = () => {
   const linkClass = ({ isActive }) =>
