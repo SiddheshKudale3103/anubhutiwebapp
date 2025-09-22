@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
   const images = [
@@ -11,19 +12,35 @@ export default function Hero() {
   React.useEffect(() => {
     const id = setInterval(
       () => setIndex((i) => (i + 1) % images.length),
-      3000
+      5000
     );
     return () => clearInterval(id);
   }, []);
 
   return (
-    <section
-      className="relative py-20 bg-cover bg-center transition-all duration-700"
-      style={{ backgroundImage: `url(${images[index]})` }}
-    >
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-white/70" />
+    <section className="relative py-20">
+      {/* Image container */}
+      <div className="absolute inset-0">
+        <AnimatePresence>
+          {images.map((img, i) =>
+            i === index ? (
+              <motion.img
+                key={i}
+                src={img}
+                alt="hero"
+                className="w-full h-full object-cover absolute inset-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+              />
+            ) : null
+          )}
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-white/70" /> {/* overlay */}
+      </div>
 
+      {/* Text content */}
       <div className="relative max-w-6xl mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold">
           Play. Create. Heal.
