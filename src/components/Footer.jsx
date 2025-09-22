@@ -1,5 +1,6 @@
 import React from "react";
 import { FaInstagram, FaPhone } from "react-icons/fa"; // Phone + Instagram
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const images = [
@@ -52,18 +53,18 @@ export default function Hero() {
           schools, families, communities, and organizations.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="/workshops"
+          <Link
+            to="/workshops"
             className="px-5 py-3 bg-indigo-600 text-white rounded-md shadow"
           >
             Book a School Workshop
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="px-5 py-3 border border-indigo-600 text-indigo-600 rounded-md"
           >
             Talk to a Psychologist
-          </a>
+          </Link>
         </div>
       </div>
     </section>
