@@ -1,8 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion"; // 👈 import motion
+import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Services from "../components/Services";
+import Vision from "../components/Vision";
+import Founders from "../components/Founders";
+import OurWork from "../components/OurWork";
+import Gallery from "../components/Gallery";
 
 export default function Home() {
   const workshops = [
@@ -36,7 +40,9 @@ export default function Home() {
     <div>
       <Hero />
       <About />
+      <Vision />
       <Services />
+      <Founders />
       <section className="py-12 max-w-6xl mx-auto px-6">
         <h3 className="text-lg font-semibold mb-6">Transformative Workshops</h3>
         <div className="grid md:grid-cols-2 gap-6">
@@ -58,6 +64,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <OurWork />
+      <Gallery />
     </div>
   );
 }
